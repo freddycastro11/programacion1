@@ -1,0 +1,86 @@
+<form v-on:submit.prevent="guardarMedicamento" data-accion="nuevo" id="frm-medicamentos" method="post">
+    <div class="card text-white bg-success mb-3" style="max-width: 34rem;">
+        <div class="card-header">
+            ---------AGREGAR MEDICAMENTOS----
+           <img src="https://img.icons8.com/small/30/000000/search.png" 
+           class="mostrar-buscar-medicamentos"
+                 data-modulo="medicamentos" data-form="buscar-medicamentos" >
+            <button type="button" id="btn-close-medicamentos" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="row p-2">
+                <div class="col-4">
+                    Código
+                </div>
+                <div class="col-8">
+                    <input type="text"  v-model="medicamento.codigom" placeholder="AAAA000000" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Nombre
+                </div>
+                <div class="col-8">
+                    <input type="text" pattern="[a-zA-Z ]+" v-model="medicamento.nombrem" placeholder="AAA AAA"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Cantidad
+                </div>
+                <div class="col-8">
+                    <input type="text" pattern="[0-9]+" v-model="medicamento.cantidad" placeholder="000"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Enfermedad
+                </div>
+                <div class="col-8">
+                    <input type="text" pattern="[a-zA-Z ]+" v-model="medicamento.tipo" placeholder="AAAAAAAAA"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Ingreso
+                </div>
+                <div class="col-8">
+                    <input type="text" pattern="[a-zA-Z ]+" v-model="medicamento.ingreso" placeholder="AAAAAAAAA"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                Caduca
+                </div>
+                <div class="col-8">
+                    <input type="date" v-model="medicamento.fecha" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                fecha de regist.
+                </div>
+                <div class="col-8">
+                    <input type="date" v-model="medicamento.registro" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2"> 
+                <div class="col-12 text-center">
+                    <input id="btnGuardarMedicamentos" type="submit" class="btn btn-primary text-white" value="Guardar">
+                    <input type="reset" class="btn btn-warning text-white" value="Limpiar">
+                   
+                </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="../../../public/vistas/medicamentos/medicamentos.js"></script>

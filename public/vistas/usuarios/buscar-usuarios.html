@@ -1,0 +1,55 @@
+<form method="POST" id="frm-buscar-usuarios">
+    <div class="card text-white bg-success mb-3" style="max-width: 65rem;">
+        <div class="car-header">
+            BUSCAR USUARIOS
+
+            <button type="button" id="btn-close-buscar-usuarios" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <table id="tbl-buscar-usuarios" class="table-striped bg-success table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="11">
+                            <input type="text" v-model="valor" v-on:keyup="buscarUsuario" placeholder="codigo,nombre o sexo" class="form-control">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Fecha nacimiento</th>
+                        <th>Peso</th>
+                        <th>Fecha peso </th>
+                        <th>Sexo</th>
+                        <th>Medicamentos</th>
+                        <th>Patología</th>
+                        <th>Edad</th>
+                        <th>Observación</th>
+                        <th>Fecha registro</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="cliente in mis_cliente" :key="cliente.idUsuario" v-on:click="modificarUsuario(cliente)">
+                        <td>{{ cliente.c }}</td>
+                        <td>{{ cliente.n }}</td>
+                        <td>{{ cliente.e }}</td>
+                        <td>{{ cliente.i + cliente.l}}</td>
+                        <td>{{ cliente.f}}</td>
+                        <td>{{ cliente.a}}</td>
+                        <td>{{ cliente.medicamento.label}}</td>
+                        <td>{{ cliente.d}}</td>
+                        <td>{{ cliente.t}}</td>
+                        <td>{{ cliente.o}}</td>
+                        <td>{{ cliente.z}}</td>
+                        <td>
+                            <input v-on:click="eliminarUsuario(cliente.idUsuario)" type="button" class="btn btn-outline-danger text-white" value="del">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+<script src="../../../public/vistas/usuarios/buscar-usuarios.js"></script>
